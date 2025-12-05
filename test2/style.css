@@ -1,0 +1,540 @@
+/* style.css - Big Bars Edition */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-app: #F2F4F7;
+    --card-bg: #FFFFFF;
+    --text-main: #1A1A1A;
+    --text-sub: #666666;
+
+    --brand-red: #E60000;
+    --brand-blue: #007AFF;
+    --brand-gradient: linear-gradient(90deg, #FF4B4B 0%, #E60000 100%);
+
+    --radius: 24px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--text-main);
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1100px;
+    background-color: var(--bg-app);
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+    margin-bottom: 20px;
+    padding: 10px 5px;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sub-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.back-btn {
+    font-size: 22px;
+    color: var(--text-main);
+    background: var(--card-bg);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* ================= CARDS GENERAL ================= */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    display: block;
+    color: var(--text-main);
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.section-title {
+    font-size: 18px;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+/* ================= WARNING CARD (Banner Style) ================= */
+.warning-card {
+    background: linear-gradient(90deg, #FF9A9E 0%, #FECFEF 100%);
+    border: none;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.warning-title {
+    color: #D32F2F;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.warning-desc {
+    font-size: 14px;
+    color: #D32F2F;
+    opacity: 0.9;
+}
+
+.warning-card .action-link {
+    background: #fff;
+    color: #D32F2F;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= USAGE CARD ================= */
+.usage-card {
+    padding: 24px 24px 30px 24px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-size: 16px;
+    color: var(--text-sub);
+    font-weight: 500;
+}
+
+.usage-card .action-link {
+    color: var(--brand-blue);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.amount-display {
+    margin-bottom: 24px;
+}
+
+.amount-display .currency {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.amount-display .number {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    height: 12px;
+    background: #EEF2F6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--brand-blue);
+    border-radius: 10px;
+}
+
+/* ================= GRID MENU (BIG BARS / แถบใหญ่) ================= */
+/* แก้ไขใหม่หมด: เปลี่ยนจาก Grid เป็น Flex Column เพื่อทำแถบยาว */
+
+.grid-menu {
+    display: flex;
+    flex-direction: column;
+    /* เรียงลงมาเป็นชั้นๆ */
+    gap: 16px;
+    /* ระยะห่างระหว่างแถบ */
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 20px;
+    /* มนๆ */
+    padding: 20px 24px;
+    /* พื้นที่ข้างในใหญ่ๆ */
+
+    display: flex;
+    flex-direction: row;
+    /* ไอคอนซ้าย ตัวหนังสือขวา */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #F0F0F0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    aspect-ratio: unset;
+    /* ยกเลิกสี่เหลี่ยมจัตุรัส */
+    height: auto;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:active {
+    transform: scale(0.98);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: #F9F9F9;
+    /* พื้นหลังไอคอนสีเทาจางๆ */
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--brand-red);
+    /* ไอคอนสีแดง */
+    flex-shrink: 0;
+    /* ไม่ให้ไอคอนหด */
+}
+
+/* จุดแจ้งเตือน */
+.icon-box::after {
+    content: 'N';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--brand-red);
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+}
+
+.menu-item span {
+    font-size: 18px;
+    /* ตัวหนังสือใหญ่ขึ้น */
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: left;
+    flex-grow: 1;
+    /* ดันให้เต็มพื้นที่ */
+}
+
+/* เพิ่มลูกศรขวาทุกแถบ เพื่อให้รู้ว่ากดไปต่อได้ */
+.menu-item::before {
+    content: '›';
+    /* หรือใช้ icon font ก็ได้ */
+    font-size: 24px;
+    color: #CCC;
+    font-weight: 400;
+    order: 3;
+    /* ไปอยู่ขวาสุด */
+}
+
+/* ================= SUB-PAGES ELEMENTS ================= */
+.chart-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.plan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plan-item {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #F0F0F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.plan-item:hover {
+    border-color: var(--brand-red);
+}
+
+.plan-item input {
+    display: none;
+}
+
+.radio-mark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #DDD;
+    border-radius: 50%;
+    position: relative;
+}
+
+.plan-item input:checked+.radio-mark {
+    border-color: var(--brand-red);
+    background: var(--brand-red);
+}
+
+.plan-item input:checked+.radio-mark::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plan-item:has(input:checked) {
+    border-color: var(--brand-red);
+    background-color: #FFF5F5;
+}
+
+.insight-box {
+    padding: 24px;
+}
+
+.insight-list {
+    list-style: none;
+}
+
+.insight-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.6;
+    border-bottom: 1px solid #F0F0F0;
+    padding-bottom: 16px;
+}
+
+.insight-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.download-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.download-item {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.download-btn {
+    background: #F9F9F9;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--brand-red);
+    cursor: pointer;
+}
+
+/* Flow Elements */
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.action-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.main-btn {
+    background: var(--brand-gradient);
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(230, 0, 0, 0.3);
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+.main-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(230, 0, 0, 0.4);
+}
+
+.main-btn:active {
+    transform: scale(0.95);
+}
+
+.result-box {
+    margin-top: 24px;
+    background-color: #FFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.result-icon {
+    font-size: 48px;
+    color: #27AE60;
+    margin-bottom: 12px;
+}
+
+.result-saving span {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* ================= RESPONSIVE DESKTOP ================= */
+@media (min-width: 768px) {
+    .app-container {
+        padding: 40px;
+        border-radius: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        min-height: calc(100vh - 80px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .grid-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .split-layout {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .chart-container {
+        height: 450px;
+    }
+
+    .action-section {
+        text-align: left;
+    }
+
+    .main-btn {
+        width: auto;
+        min-width: 240px;
+    }
+
+    .result-box {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
