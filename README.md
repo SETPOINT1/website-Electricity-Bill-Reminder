@@ -51,4 +51,4 @@ Computer Engineering
 Thammasat University
 
 ---
-*© 2024 Chonchanan Jitawang. All Rights Reserved.*
+*© 2025 Chonchanan Jitawang. All Rights Reserved.*
